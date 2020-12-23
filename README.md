@@ -1,4 +1,4 @@
-# Github Cheat Sheet
+# Git Cheat Sheet
 
 This document is a cheat sheet I created for myself but perhaps it will be useful to others. I will continue to work on it as I learn more about Git. If you see mistakes or have suggestions, please feel free to contact me at masood@masoodkamandy.com.
 
