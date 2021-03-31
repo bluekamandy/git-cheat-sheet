@@ -27,6 +27,8 @@ Note: It is **not advised** to make commits to the main branch. If you want to c
 
 `git init` – Initialize git in current directory
 
+Note: If you are using GitHub, after you create a local repository, if it is local it may not adhere to GitHub's new nomenclature. To change master to main, after you make your first commit, type the following: `git branch -m master main` and this will change the name of your primary branch to main from the older master.
+
 `git status` – Check status of git repository
 
 `git add` – Stage a file for version tracking.
