@@ -71,6 +71,8 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 
 `git push -u <repo name> <branch. Default is main>` – the push process for GitHub after you’ve specified a remote repo. (u is for upstream). Once you do this, you can just type git push by itself.
 
+Note: If you started your reposotory on your computer and then began pushing to a remote afterward, it will be necessary to set your default remote repository so that you can just type `git push` and have it go to your remote. To do this, after you have a remote repository set up, type `git config --global push.default current`.
+
 ## Branching/Branches
 
 **Notes:**
