@@ -71,7 +71,9 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 
 `git push -u <repo name> <branch. Default is main>` – the push process for GitHub after you’ve specified a remote repo. (u is for upstream). Once you do this, you can just type git push by itself.
 
-Note: If you started your reposotory on your computer and then began pushing to a remote afterward, it will be necessary to set your default remote repository so that you can just type `git push` and have it go to your remote. To do this, after you have a remote repository set up, type `git config --global push.default current`.
+**Note:** If you started your reposotory on your computer and then began pushing to a remote afterward, it will be necessary to set your default remote repository so that you can just type `git push` and have it go to your remote. To do this, after you have a remote repository set up, type `git config --global push.default current`.
+
+It might also be necessary to remove files if you've updated your gitignore file. To remove cached files from your git use `git rm --cached file1` and to remove cached directories, you need to do it recursively so use `git rm --cached -r folder1`.
 
 ## Branching/Branches
 
