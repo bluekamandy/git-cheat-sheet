@@ -142,6 +142,12 @@ It might also be necessary to remove files if you've updated your gitignore file
 
 `git push --delete <remote-branch-to-delete>` – allows you to delete a remote branch. You should do this after merging.
 
+## Submodules
+
+Git submodules allows you to incorporate dependencies into your project via the commandline.
+
+`git submodule add <remote-repo> <destination-directory>`
+
 ## Vocabulary
 
 **SHA Checksum** – Simple Hashing Algorithm
