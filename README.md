@@ -73,7 +73,7 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 
 **Note:** If you started your reposotory on your computer and then began pushing to a remote afterward, it will be necessary to set your default remote repository so that you can just type `git push` and have it go to your remote. To do this, after you have a remote repository set up, type `git config --global push.default current`.
 
-It might also be necessary to remove files if you've updated your gitignore file. To remove cached files from your git use `git rm --cached file1` and to remove cached directories, you need to do it recursively so use `git rm --cached -r folder1`.
+It might also be necessary to remove files if you've updated your gitignore file. To remove cached files from your git use `git rm --cached file1` and to remove cached directories, you need to do it recursively so use `git rm --cached -r folder1`. If you've commited a large number of files and you want to just remove everything form the cache and start over, you can type `git rm --cached -r .`. The `.` specifies that you want to remove everything recursively (-r) from the current directory and inside it.
 
 ## Branching/Branches
 
