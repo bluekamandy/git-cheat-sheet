@@ -45,6 +45,16 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 
 `git clone <URL>` – clone a repository to your current folder.
 
+## To Push an Existing Repository to GitHub
+
+If you've already created a repository on your computer and decide to push it out/assign it to a repository on GitHub, use the following code:
+
+```bash
+git remote add origin <repository-url>
+git branch -M main
+git push -u origin main
+```
+
 ## Intermediate Git Commands
 
 `git rm <file name>` – Delete a file and include the change in the git repository. You must commit these changes.
