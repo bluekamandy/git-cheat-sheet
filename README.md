@@ -158,6 +158,38 @@ Git submodules allows you to incorporate dependencies into your project via the 
 
 `git submodule add <remote-repo> <destination-directory>`
 
+## Duplicating a Repository of Your Own
+
+There are times when you may have a template that you use to start projects and rather than forking, simply duplicating a repo into a new repo is the best solution. This is called **mirroring** a repository.
+
+([Source](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository))
+
+**Steps:**
+
+1. Open Terminal.
+
+2. Create a bare clone of the repository. A bare clone just clones the repository as-is independently of the repo it came from. It's frozen in time, which works well for templates.
+
+   ```bash
+   $ git clone --bare https://github.com/exampleuser/old-repository.git
+   ```
+
+3. Mirror-push to the new repository.
+
+   ```bash
+   $ cd old-repository
+   $ git push --mirror https://github.com/exampleuser/new-repository.git
+   ```
+
+4. Remove the temporary local repository you created earlier.
+
+   ```bash
+   $ cd ..
+   $ rm -rf old-repository
+   ```
+
+After this you can clone the newly duplicated project onto your computer and start your work!
+
 ## Vocabulary
 
 **SHA Checksum** – Simple Hashing Algorithm
