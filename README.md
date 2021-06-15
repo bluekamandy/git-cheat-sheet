@@ -190,6 +190,34 @@ There are times when you may have a template that you use to start projects and 
 
 After this you can clone the newly duplicated project onto your computer and start your work!
 
+## Setting Up an Access Token on GitHub for Terminal or Other Apps
+
+GitHub now requires that you use an access token to log onto the website.
+
+To create a personal access token, [GitHub's documentation summarizes the process](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+If you haven't set up github access on your terminal, go ahead and create an access token, and log in with the access token as your password.
+
+```bash
+git clone https://github.com/username/repo.git
+Username: your_username
+Password: your_token
+```
+
+([Source](https://gist.github.com/jonjack/bf295d4170edeb00e96fb158f9b1ba3c))
+
+If you've already entered a password or access token and you need to change it, you can erase your credentials with the following:
+
+```bash
+$ git credential-osxkeychain erase ⏎
+ host=github.com  ⏎
+ protocol=https   ⏎
+ ⏎
+ ⏎
+```
+
+([Source](https://stackoverflow.com/questions/11067818/how-do-you-reset-the-stored-credentials-in-git-credential-osxkeychain/28007050#28007050))
+
 ## Vocabulary
 
 **SHA Checksum** – Simple Hashing Algorithm
