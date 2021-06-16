@@ -218,6 +218,128 @@ $ git credential-osxkeychain erase ⏎
 
 ([Source](https://stackoverflow.com/questions/11067818/how-do-you-reset-the-stored-credentials-in-git-credential-osxkeychain/28007050#28007050))
 
+## Global .gitignore
+
+There are certain files on the macOS, my primary development environment, that really don't belong in any git repository. I also build in multiple languages that all have their specific needs. Over time I've created my own git ignore file that seems to work quite well.
+
+Here's a copy of the .gitignore file I've created that seems to work well for all of my development projects.
+
+```
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Xcode files
+*.xcuserstate
+
+# Build folders
+[Bb][Uu][Ii][Ll][Dd]/
+x64/
+
+# VS Code
+.vscode/
+
+# C++ Standard
+# Source: https://github.com/github/gitignore/blob/master/C%2B%2B.gitignore
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake Git Ignore
+# Source: https://github.com/github/gitignore/blob/master/CMake.gitignore
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+```
+
+In order to make this file apply to all projects init'd on your computer, you'll need to set it in your git configuration. ([Source](http://egorsmirnov.me/2015/05/04/global-gitignore-file.html))
+
+1. Create a new global .gitignore file in your home directory:
+
+   ```bash
+   touch ~/.gitignore_global 
+   ```
+
+2. Open this file with TextEdit (I find this easiest, but you can really use any text editor):
+
+   ```bash
+   open -a TextEdit ~/.gitignore_global
+   ```
+
+3. Paste in or write whatever values you'd like to add to your .gitignore file. A good resource for the syntax is in [the git documentation](https://git-scm.com/docs/gitignore). Github also hosts [a collection of useful gitignore examples](https://github.com/github/gitignore).
+
+4. Save the file and close out of it.
+
+5. Run the following command to make all the patterns in your .gitignore_global file ignored in all situations.
+
+   ```bash
+   git config --global core.excludesfile ~/.gitignore_global
+   ```
+
+   
+
 ## Vocabulary
 
 **SHA Checksum** – Simple Hashing Algorithm
