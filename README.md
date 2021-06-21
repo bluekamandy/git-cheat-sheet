@@ -14,12 +14,13 @@ This document is a cheat sheet I created for myself but perhaps it will be usefu
 7. [Merging](#Merging)
    1. [Merge Conflicts](#Merge-Conflicts)
 8. [Remote Branches](#Remote-Branches)
-9. [Submodules](#Submodules)
-10. [Duplicating a Repository of Your Own](#Duplicating-a-Repository-of-Your-Own)
-11. [Setting Up an Access Token on GitHub for Terminal or Other Apps](#Setting-Up-an-Access-Token-on-GitHub-for-Terminal-or-Other-Apps)
-12. [Global .gitignore](#Global-.gitignore)
-13. [Vocabulary](#Vocabulary)
-14. [Basic Shell Command Refresher](#Basic-Shell-Command-Refresher) 
+9. [Resetting a Forked Repository](#Resetting-a-Forked-Repository)
+10. [Submodules](#Submodules)
+11. [Duplicating a Repository of Your Own](#Duplicating-a-Repository-of-Your-Own)
+12. [Setting Up an Access Token on GitHub for Terminal or Other Apps](#Setting-Up-an-Access-Token-on-GitHub-for-Terminal-or-Other-Apps)
+13. [Global .gitignore](#Global-.gitignore)
+14. [Vocabulary](#Vocabulary)
+15. [Basic Shell Command Refresher](#Basic-Shell-Command-Refresher) 
 
 ## Getting Started
 
@@ -67,6 +68,8 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 `git log -p` – See all changes listed including actual changes to files.
 
 `git clone <URL>` – clone a repository to your current folder.
+
+`git reset <file name>` – If you've accidentally staged a file, or would like to unstage a file for a specific reason (like maybe it should be a part of a different commit for clarity) you can use this file to unstage your files.
 
 [Table of Contents](#Table-of-Contents)
 
@@ -190,6 +193,49 @@ It might also be necessary to remove files if you've updated your gitignore file
 `git push -u <remote repo> <remote-branch>` – push your changes and set up the local branch to track the remote branch. -u stands for upstream. After doing this, you’ll only have to type `git push` because the local branch will be a tracking branch.
 
 `git push --delete <remote-branch-to-delete>` – allows you to delete a remote branch. You should do this after merging.
+
+[Table of Contents](#Table-of-Contents)
+
+## Resetting a Forked Repository
+
+When working on a forked repository (like in open-source projects), it's common to work and make so many changes that it doesn't really make sense to create a pull request for those changes.
+
+You might need to reset your repository or resync your fork and create incremental pull requests that are easy for your colleagues to parse and understand without a significant amount of effort.
+
+First, you'll want to capture all of the changes you made into a new branch to keep them.
+
+1. First you'll need to add the original repository as your upstream.
+
+   ```bash
+   git remote add upstream <URL>
+   ```
+
+2. Then you'll need to fetch the code:
+
+   ```bash
+   git fetch upstream
+   ```
+
+3. Then you'll need to checkout your main branch:
+
+   ```bash
+   git checkout main
+   ```
+
+4. Then you'll reset your main branch to the upstream.
+
+   ```
+   git reset --hard upstream/master  
+   ```
+
+5. Then you'll need to push those changes to our fork (aka `origin`). 
+   **Note:** Some caution should be used with this command and it should not be used lightly. It can cause great damage to a repository.
+
+   ```
+   git push origin master --force
+   ```
+
+([Source](https://gist.github.com/glennblock/1974465))
 
 [Table of Contents](#Table-of-Contents)
 
@@ -411,6 +457,13 @@ Note: Every commit creates an SHA that is a unique identifier for every commit. 
 **Detached HEAD** – Happens when you checkout a specific commit using an SHA checksum as opposed to a branch. You can lose data with a detached HEAD so it’s not recommended to checkout specific commits.
 
 **Tracking Branch** – A branch that is designed to track changes to remote branches.
+
+`upstream` generally refers to the original repo that you have forked
+ (see also "[Definition of “`downstream`” and “`upstream`”](https://stackoverflow.com/a/2749166/6309)" for more on `upstream` term) 
+
+`origin` is your fork: your own repo on GitHub, clone of the original repo of GitHub
+
+([Source](https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github))
 
 [Table of Contents](#Table-of-Contents)
 
