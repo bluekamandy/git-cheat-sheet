@@ -1,6 +1,25 @@
 # Git Cheat Sheet
 
-This document is a cheat sheet I created for myself but perhaps it will be useful to others. I will continue to work on it as I learn more about Git. If you see mistakes or have suggestions, please feel free to contact me at masood@masoodkamandy.com.
+This document is a cheat sheet I created for myself but perhaps it will be useful to others. I will continue to work on it as I learn more about Git. If you see mistakes or have suggestions, please feel free to contact me at masood@masoodkamandy.com.a
+
+## Table of Contents
+
+1. [Getting Started](#Getting-Started)
+2. [Basic Process to Follow When a File has Changed](#Basic-Process-to-Follow-When-a File-has-Changed)
+3. [Basic Git Commands](#Basic-Git-Commands)
+4. [To Push an Existing Repository to GitHub](#To-Push-an-Existing-Repository-to-GitHub)
+5. [Intermediate Git Commands](#Intermediate-Git-Commands)
+6. [Branching and Branches](#Branching-and-Branches)
+   1. [Comparing Branches](#Comparing-Branches)
+7. [Merging](#Merging)
+   1. [Merge Conflicts](#Merge-Conflicts)
+8. [Remote Branches](#Remote-Branches)
+9. [Submodules](#Submodules)
+10. [Duplicating a Repository of Your Own](#Duplicating-a-Repository-of-Your-Own)
+11. [Setting Up an Access Token on GitHub for Terminal or Other Apps](#Setting-Up-an-Access-Token-on-GitHub-for-Terminal-or-Other-Apps)
+12. [Global .gitignore](#Global-.gitignore)
+13. [Vocabulary](#Vocabulary)
+14. [Basic Shell Command Refresher](#Basic-Shell-Command-Refresher) 
 
 ## Getting Started
 
@@ -14,6 +33,8 @@ To confirm that these are set run:
 
 `git config --list`
 
+[Table of Contents](#Table-of-Contents)
+
 ## Basic Process to Follow When a File has Changed
 
 1. Stage the file with `git add <file>`
@@ -22,6 +43,8 @@ To confirm that these are set run:
 Note: It is **not advised** to make commits to the main branch. If you want to create a new branch before you stage and commit, add this before step 1 above:
 
 `git checkout -b <branch-name>`
+
+[Table of Contents](#Table-of-Contents)
 
 ## Basic Git Commands
 
@@ -45,6 +68,8 @@ Note: If you are using GitHub, after you create a local repository, if it is loc
 
 `git clone <URL>` – clone a repository to your current folder.
 
+[Table of Contents](#Table-of-Contents)
+
 ## To Push an Existing Repository to GitHub
 
 If you've already created a repository on your computer and decide to push it out/assign it to a repository on GitHub, use the following code:
@@ -54,6 +79,8 @@ git remote add origin <repository-url>
 git branch -M main
 git push -u origin main
 ```
+
+[Table of Contents](#Table-of-Contents)
 
 ## Intermediate Git Commands
 
@@ -85,7 +112,9 @@ git push -u origin main
 
 It might also be necessary to remove files if you've updated your gitignore file. To remove cached files from your git use `git rm --cached file1` and to remove cached directories, you need to do it recursively so use `git rm --cached -r folder1`. If you've commited a large number of files and you want to just remove everything form the cache and start over, you can type `git rm --cached -r .`. The `.` specifies that you want to remove everything recursively (-r) from the current directory and inside it.
 
-## Branching/Branches
+[Table of Contents](#Table-of-Contents)
+
+## Branching and Branches
 
 **Notes:**
 
@@ -104,6 +133,10 @@ It might also be necessary to remove files if you've updated your gitignore file
 
 `git branch -a` – get a list of all branches, including all remote branches.
 
+`git branch -r` – get a list of all remote branches.
+
+[Table of Contents](#Table-of-Contents)
+
 ### Comparing Branches
 
 `git diff <SHA Checksum of earlier commit> <SHA Checksum of later commit>` – Compare two different commits.
@@ -111,6 +144,8 @@ It might also be necessary to remove files if you've updated your gitignore file
 `git diff <name of branch> <name of branch>` – compare two branches.
 
 `git diff <name of branch>` – compare current working directory with branch.
+
+[Table of Contents](#Table-of-Contents)
 
 ## Merging
 
@@ -120,6 +155,8 @@ It might also be necessary to remove files if you've updated your gitignore file
 - It’s a good idea to delete branches after you test them completely and merge them into the main so they don’t confuse you in the future.
 
 `git merge <branch-name>` – merges whatever branch you specify into the current branch.
+
+[Table of Contents](#Table-of-Contents)
 
 ### Merge Conflicts
 
@@ -133,6 +170,8 @@ It might also be necessary to remove files if you've updated your gitignore file
 `git merge --abort` – Use when you have a merge conflict that you cannot resolve, so you want to abort the merge process.
 
 `git add <file>` – marks that the file has been resolved when there is a conflict.
+
+[Table of Contents](#Table-of-Contents)
 
 ## Remote Branches
 
@@ -152,11 +191,15 @@ It might also be necessary to remove files if you've updated your gitignore file
 
 `git push --delete <remote-branch-to-delete>` – allows you to delete a remote branch. You should do this after merging.
 
+[Table of Contents](#Table-of-Contents)
+
 ## Submodules
 
 Git submodules allows you to incorporate dependencies into your project via the commandline.
 
 `git submodule add <remote-repo> <destination-directory>`
+
+[Table of Contents](#Table-of-Contents)
 
 ## Duplicating a Repository of Your Own
 
@@ -190,6 +233,8 @@ There are times when you may have a template that you use to start projects and 
 
 After this you can clone the newly duplicated project onto your computer and start your work!
 
+[Table of Contents](#Table-of-Contents)
+
 ## Setting Up an Access Token on GitHub for Terminal or Other Apps
 
 GitHub now requires that you use an access token to log onto the website.
@@ -217,6 +262,8 @@ $ git credential-osxkeychain erase ⏎
 ```
 
 ([Source](https://stackoverflow.com/questions/11067818/how-do-you-reset-the-stored-credentials-in-git-credential-osxkeychain/28007050#28007050))
+
+[Table of Contents](#Table-of-Contents)
 
 ## Global .gitignore
 
@@ -338,7 +385,8 @@ In order to make this file apply to all projects init'd on your computer, you'll
    git config --global core.excludesfile ~/.gitignore_global
    ```
 
-   
+
+[Table of Contents](#Table-of-Contents)
 
 ## Vocabulary
 
@@ -364,7 +412,9 @@ Note: Every commit creates an SHA that is a unique identifier for every commit. 
 
 **Tracking Branch** – A branch that is designed to track changes to remote branches.
 
-## Basic Unix Command Refresher 
+[Table of Contents](#Table-of-Contents)
+
+## Basic Shell Command Refresher 
 
 `ls -a` – Show files including hidden files.
 
@@ -378,4 +428,4 @@ Note: Every commit creates an SHA that is a unique identifier for every commit. 
 
 `cat` – look at file’s contents.
 
- 
+ [Table of Contents](#Table-of-Contents)
